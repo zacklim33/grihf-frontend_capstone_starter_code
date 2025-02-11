@@ -1,0 +1,69 @@
+body {
+    font-family: sans-serif; /* Choose a suitable font */
+    margin: 0;
+    background-color: #f0f0f0; /* Light gray background */
+    color: #333; /* Dark gray text color */
+}
+
+header {
+    background-color: #fff; /* White header background */
+    padding: 20px;
+    text-align: center;
+}
+
+.header-content h1 {
+    color: #000; /* Black header title */
+    margin-bottom: 10px;
+}
+
+.header-content p {
+    color: #555; /* Slightly lighter gray for subtitle */
+}
+
+.services {
+    background-color: #e6f2ff; /* Light blue background for services */
+    padding: 40px;
+    text-align: center;
+}
+
+.services-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.services-content p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.services-content strong {
+    color: #007bff; /* Blue for highlighted text */
+}
+
+.cta {
+    background-color: #fff; /* White CTA background */
+    padding: 30px;
+    text-align: center;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #007bff; /* Blue button */
+    color: #fff;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+footer {
+    background-color: #333; /* Dark gray footer */
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}

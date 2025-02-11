@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StayHealth Inc</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: url('background.png') no-repeat center center fixed;
+      background-size: cover;
+      color: #333;
+      text-align: center;
+    }
+
+    /* Navbar Styling */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 50px;
+      background-color: #0056b3;
+      color: white;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    .navbar .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .navbar .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    .navbar .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: 0.3s;
+    }
+
+    .navbar .nav-links a:hover {
+      text-decoration: underline;
+    }
+
+    .navbar .buttons {
+      display: flex;
+      gap: 10px;
+    }
+
+    .navbar .buttons a {
+      padding: 8px 15px;
+      border-radius: 5px;
+      font-size: 1rem;
+      text-decoration: none;
+      color: white;
+    }
+
+    .navbar .login {
+      background-color: #16a34a;
+    }
+
+    .navbar .signup {
+      background-color: white;
+      color: black;
+    }
+
+    /* Landing Page */
+    .landing-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      padding-top: 70px; /* Adjust for navbar */
+    }
+
+    .landing-content {
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 50px 20px;
+      border-radius: 10px;
+      max-width: 600px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: #000;
+    }
+
+    h2 {
+      font-size: 2rem;
+      color: #6c63ff;
+    }
+
+    p {
+      font-size: 1rem;
+      margin: 10px 0;
+    }
+
+    .button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">StayHealth Inc</div>
+    <ul class="nav-links">
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Appointments</a></li>
+      <li><a href="#">Blog</a></li>
+      <li><a href="#">Review</a></li>
+      <li><a href="#">About Us</a></li>
+    </ul>
+    <div class="buttons">
+      <a href="#" class="login">Login</a>
+      <a href="#" class="signup">Sign up</a>
+    </div>
+  </nav>
+
+  <!-- Landing Page -->
+  <div class="landing-container">
+    <div class="landing-content">
+      <h1>Your Health</h1>
+      <h2>Our Responsibility</h2>
+      <p>
+        Your <strong>reliable medical</strong> health services at the remote areas<br>
+        New life-saving initiative from StayHealthy
+      </p>
+      <a href="#" class="button">Get Started</a>
+    </div>
+  </div>
+
+</body>
+</html>

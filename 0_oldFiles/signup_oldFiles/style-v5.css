@@ -1,0 +1,81 @@
+/* style.css */
+body {
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;     /* Center vertically */
+    min-height: 100vh;       /* Ensure full viewport height */
+    margin: 0;
+    padding: 20px; /* Add some padding around the form */
+}
+
+h1 {
+  text-align: center; /* Center the heading */
+  margin-bottom: 20px;  /* Add space below the heading */
+}
+
+form {
+    width: 600px; /* Adjust as needed */
+    border: 1px solid #ccc;  /* Optional: Add a border to the entire form */
+    padding: 20px;
+    border-radius: 5px; /* Optional: Add rounded corners */
+    background-color: #f8f8f8; /* Optional: Add a light background color */
+}
+
+.form-group {
+    display: flex;
+    gap: 20px; /* Space between columns */
+}
+
+.column {
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-sizing: border-box; /* Include padding in width calculation */
+    border-radius: 5px; /* Optional: Rounded corners for columns */
+}
+
+.left-column {
+    width: 200px; /* Adjust as needed */
+}
+
+.right-column {
+    flex-grow: 1; /* Allows the right column to take up remaining space */
+}
+
+label {
+    display: block; /* Makes labels stack on top of inputs */
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select {
+    width: calc(100% - 10px); /* Full width within the column, accounting for padding */
+    padding: 5px;
+    margin-bottom: 10px; /* Space between input fields */
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+.buttons {
+    margin-top: 20px;
+    text-align: center; /* Center the buttons */
+}
+
+button {
+    display: flex;
+    padding: 10px 20px;
+    margin: 0 10px; /* Space between buttons */
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50; /* Green */
+    color: white;
+    cursor: pointer;
+}
+
+button[type="reset"] {
+    display: flex;
+    background-color: #f44336; /* Red */
+}
