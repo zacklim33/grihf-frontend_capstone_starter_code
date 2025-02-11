@@ -98,7 +98,7 @@
 
 
 .background-layer { /* Give your div a class name for easier styling */
-  background: url("./background.png");
+  background: url("./background.jpg");
   background-size: cover; /* or contain, depending on how you want the image to fit */
   background-repeat: no-repeat; /* Prevent image tiling */
   opacity: 0.5;
