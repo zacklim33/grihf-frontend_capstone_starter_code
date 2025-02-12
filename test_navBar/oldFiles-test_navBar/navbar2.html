@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navbar</title>
+    <link rel="stylesheet" href="styles-navbar2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="navbar-container container">
+            <input type="checkbox" name="" id="checkbox">
+            <div class="hamburger-lines">
+                <span class="line line1"></span>
+                <span class="line line2"></span>
+                <span class="line line3"></span>
+            </div>  
+            <ul class="menu-items">
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Appointments</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Review</a></li>
+                <li><a href="#">About Us</a></li>
+            </ul>
+            <h1 class="logo">StayHealthy</h1>
+            <div class="login-signup">
+                <a href="#">Login</a>
+                <a href="#" class="signup-btn">Signup</a>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const checkbox = document.getElementById('checkbox');
+            const navbar = document.querySelector('.navbar');
+
+            // Function to close the menu
+            function closeMenu() {
+                checkbox.checked = false; // Uncheck the checkbox, closing the menu
+            }
+
+            // Event listener for clicking outside the menu
+            document.addEventListener('click', function(event) {
+                const target = event.target;
+                if (!navbar.contains(target) && checkbox.checked) {
+                    closeMenu();
+                }
+            });
+
+            // Event listener for clicks on the navbar itself to close the menu
+            navbar.addEventListener('click', function(event) {
+                if (checkbox.checked) { // Only close if the menu is open
+                   // Prevent closing when clicking on links or the hamburger
+                  const target = event.target;
+                    if (!(target.classList.contains('hamburger-lines') || target.classList.contains('line') || target.tagName === 'A')) { // Changed from .menu-items
+                        closeMenu();
+                    }
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

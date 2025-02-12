@@ -9,7 +9,7 @@
 }
 
 .signin-container {
-    width: 35vw;
+    width: 42vw;
     background-color: #FAFFEA;
     padding: 3.25rem;
     border-radius: 0.7rem;
@@ -51,7 +51,6 @@
     text-decoration: underline;
     font-weight: 600;
 }
-
 
 
 .form-group {
@@ -152,4 +151,12 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+}
+
+
+@media (max-width: 1350px) {
+
+    .signin-container {
+        width: 48vw;
+    }
 }

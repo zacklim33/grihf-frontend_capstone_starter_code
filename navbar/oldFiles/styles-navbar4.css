@@ -1,0 +1,156 @@
+/* Basic Styling */
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    background-color: #f0f0f0; /* Example background color */
+    padding: 10px;
+    display: flex;
+    justify-content: space-between; /* Distribute space between logo and links */
+    align-items: center; /* Vertically align items */
+    flex-wrap: wrap; /* Important for responsiveness */
+    display: flex;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none; /* Remove bullet points */
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin-left: 20px; /* Space between links */
+}
+
+.nav-links a {
+    text-decoration: none; /* Remove underlines */
+    color: #333; /* Example link color */
+    padding: 5px 10px; /* Add padding for better clickability */
+}
+
+.nav-links a:hover {
+    background-color: #ddd; /* Example hover effect */
+    border-radius: 5px; /* rounded corners*/
+}
+
+.cta-buttons {
+    display: flex;
+}
+
+.cta-buttons a {
+    text-decoration: none;
+    color: #fff;
+    background-color: #007bff; /* Example button color */
+    padding: 8px 15px;
+    margin-left: 10px;
+    border-radius: 5px;
+}
+
+.cta-buttons a:hover {
+    background-color: #0056b3;
+}
+
+/* Mobile Styles */
+.menu-toggle {
+    display: none; /* Hide hamburger icon by default */
+    cursor: pointer;
+    font-size: 1.5em; /* Adjust size as needed */
+    padding: 5px;
+}
+
+.hamburger {
+    display: block; /* Show hamburger icon */
+}
+
+.close {
+    display: none; /* Hide close icon */
+}
+
+
+@media (max-width: 768px) { /* Adjust breakpoint as needed */
+nav {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .nav-links {
+        display: none; /* Hide links on mobile */
+        flex-direction: column; /* Stack links vertically */
+        position: absolute; /* Position the menu */
+        top: 60px; /* Adjust top position if needed */
+        left: 0;
+        width: 100%;
+        background-color: #f0f0f0;
+        text-align: center; /* Center the links */
+        box-shadow: 0px 2px 5px rgba(0,0,0,0.2); /* add a shadow to the menu*/
+        z-index: 1; /* Ensure the menu is on top */
+    }
+
+    .nav-links.active {
+        display: flex; /* Show links when menu is active */
+    }
+
+    .nav-links li {
+        margin: 10px 0; /* Adjust vertical spacing */
+        margin-left: 0; /* Remove horizontal margin */
+        padding: 10px; /* Add padding to list items for better touch targets */
+        border-bottom: 1px solid #ddd; /* Add a separator line between each item */
+        
+    }
+
+    .nav-links a {
+        display: block; /* Make links fill the width */
+        padding: 10px; /* Add padding to the links */
+    }
+
+    .menu-toggle {
+        display: block; /* Show hamburger icon */
+        order: 2; /* place the menu toggle at the end*/
+        margin-left: 10px; /* add some space between the button and hamburger */
+    }
+
+    .cta-buttons {
+        display: flex; /* Ensure flex display */
+        flex-direction: row; /* Stack buttons vertically */
+        margin-top: 10px;
+        width: 100%; /* Make buttons full width */
+        order: 1; /* place buttons in the middle */
+    }
+
+    .cta-buttons a {
+        margin: 5px 0;
+        margin-left: 0;
+        display: inline-block; /* Make buttons fill the width */
+        width: auto; /* Allow buttons to take full width */
+        box-sizing: border-box; /* Include padding and border in width calculation */
+    }
+}
+
+
+@media (max-width: 450px) { /* Styles for very small screens */
+    .logo {
+        font-size: 1em; /* Make logo smaller */
+    }
+
+    .cta-buttons a {
+        font-size: 0.9em; /* Smaller font for buttons */
+        padding: 5px 10px; /* Smaller padding */
+    }
+
+    .nav-links li {
+        font-size: 0.95em; /* Slightly smaller font for links */
+    }
+
+    nav {
+        padding: 5px; /* Reduce padding on navbar */
+    }
+}

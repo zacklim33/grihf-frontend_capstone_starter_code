@@ -1,0 +1,246 @@
+/* General Styles */
+body {
+    font-family: sans-serif;
+    margin: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+a {
+    text-decoration: none;
+    color: #333; /* Or your preferred link color */
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: #f8f8f8;
+    padding: 15px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #007bff; /* Or your brand color */
+}
+
+/* Desktop Menu */
+.menu-items {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-items li {
+    margin-left: 20px;
+}
+
+.menu-items li a {
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.menu-items li a:hover {
+    color: #007bff;
+}
+
+.login-signup {
+    display: flex;
+    align-items: center;
+}
+
+.login-signup a {
+    margin-left: 20px;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.login-signup a:hover {
+    color: #007bff;
+}
+
+.signup-btn {
+    background-color: #007bff;
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.signup-btn:hover {
+    background-color: #0056b3;
+}
+
+
+/* Mobile Menu (Hidden by default) */
+.hamburger-lines {
+    display: none; /* Initially hide */
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.line {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin-bottom: 4px;
+}
+
+.login-signup {
+    display: flex;
+    align-items: center;
+}
+
+.login-signup a {
+    margin-left: 10px; /* Reduce spacing for mobile */
+    font-size: 14px; /* Smaller font for mobile */
+}
+
+
+/* Mobile Styles (Media Query) */
+@media (max-width: 450px) {
+    .navbar-container {
+        flex-wrap: wrap; /* Allow items to wrap to the next line */
+    }
+
+    .menu-items {
+        display: none; /* Hide the desktop menu */
+    }
+
+    .hamburger-lines {
+        display: flex; /* Show the hamburger menu */
+        order: 1; /* Moves it to the beginning using flexbox order */
+    }
+
+    .logo {
+        margin-left: 10px; /* Add some spacing */
+        order: 2; /* Moves it after the hamburger */
+        font-size: 20px; /* Smaller logo for mobile */
+    }
+
+    .login-signup {
+        order: 3; /* Move login/signup to the end */
+    }
+
+    .login-signup a:first-child {
+        display: none; /* Hide login on smaller screens */
+    }
+
+    .signup-btn {
+        display:none;
+    }
+
+    /* Hamburger Menu Styling (when active) */
+    .navbar-container input[type="checkbox"],
+    .navbar-container .hamburger-lines{
+        display: block;
+    }
+
+    .navbar-container{
+        display: block;
+        position: relative;
+        height: 64px;
+    }
+
+    .navbar-container input[type="checkbox"]{
+        position: absolute;
+        display: block;
+        height: 32px;
+        width: 30px;
+        top: 20px;
+        left: 20px;
+        z-index: 5;
+        opacity: 0;
+        cursor: pointer;
+    }
+
+    .navbar-container .hamburger-lines{
+        display: block;
+        height: 28px;
+        width: 35px;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .navbar-container .hamburger-lines .line{
+        display: block;
+        height: 4px;
+        width: 100%;
+        border-radius: 10px;
+        background: #333333;
+    }
+
+    .navbar-container .hamburger-lines .line1{
+        transform-origin: 0% 0%;
+        transition: transform 0.4s ease-in-out;
+    }
+
+    .navbar-container .hamburger-lines .line2{
+        transition: transform 0.2s ease-in-out;
+    }
+
+    .navbar-container .hamburger-lines .line3{
+        transform-origin: 0% 100%;
+        transition: transform 0.4s ease-in-out;
+    }
+
+    .navbar .menu-items{
+        padding-top: 100px;
+        background: #e7e7e7;
+        height: 100vh;
+        max-width: 300px;
+        transform: translate(-150%);
+        display: flex;
+        flex-direction: column;
+        margin-left: -40px;
+        padding-left: 50px;
+        transition: transform 0.5s ease-in-out;
+        text-align: center;
+    }
+
+    .navbar .menu-items li{
+        margin-bottom: 1.2rem;
+        font-size: 1.4rem;
+        font-weight: 500;
+    }
+
+    .logo{
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        font-size: 2.0rem;
+    }
+
+    .navbar-container input[type="checkbox"]:checked ~ .menu-items{
+        transform: translateX(0);
+    }
+
+    .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line1{
+        transform: rotate(45deg);
+    }
+
+    .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line2{
+        transform: scaleY(0);
+    }
+
+    .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line3{
+        transform: rotate(-45deg);
+    }
+
+}

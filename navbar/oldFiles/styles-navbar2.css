@@ -1,0 +1,244 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+}
+
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    background: #0057B8;
+    padding: 15px 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+    position: relative; /* responsive Added: Needed for positioning the menu button */
+}
+
+/* Logo Styling */
+.logo {
+    font-size: 22px;
+    font-weight: 700;
+    color: white;
+    align-items: center; /* vertically align items */
+    display: flex;
+}
+
+.logo span {
+    color: #ffffff;
+}
+
+.doctor-icon {
+    display: inline-flex; /* use flexbox for alignment */
+    align-items: center; /* vertically center the SVG */
+    width: 2em; /* Adjust as needed */
+    height: auto; /* Adjust as needed */
+    margin-right: 0.5em; /* Space between icon and text */
+    transition: transform 0.3s ease, fill 0.3s ease; /* Add transition for smooth effect */
+}
+
+.doctor-icon svg {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Or cover, fill, scale-down as needed */
+    fill: #FFFFFF;
+    display: block; /* Prevents small space below SVG */
+    transition: transform 0.3s ease, fill 0.3s ease;
+}
+
+.logo:hover .doctor-icon svg  { /* Hover effect on the SVG */
+    fill: #FFD700;
+}
+
+
+.logo a {
+    display: inline-flex; /* use flexbox for alignment */
+    text-decoration: none;
+    color: white;
+    transition: transform 0.3s ease, color 0.3s ease;
+    object-fit: contain; /* Or cover, fill, scale-down as needed */
+}
+
+.logo:hover {    
+    transform: scale(1.05);
+}
+
+.logo a:hover {
+    color: #FFD700;
+}
+
+
+/* Menu Toggle Button */
+.menu-toggle {
+    display: block;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 2;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Navigation Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li {
+    display: inline-block;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #FFD700;
+    font-weight: 530;    
+    text-decoration: underline;
+}
+
+
+
+
+/* Buttons */
+.nav-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.login-btn {
+    background: #11ac7d;
+    text-decoration: none;
+    margin-left: 15px;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    transform: translateX(-5px);
+}
+
+.login-btn:hover {
+    background: #0d8f66;
+    transform: scale(1.05) translateX(-6.5px);
+    text-decoration: underline;
+    font-weight: 750;
+}
+
+.signup-btn {
+    background: white;
+    text-decoration: none;
+    color: black;
+    padding: 8px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.signup-btn:hover {
+    transform: scale(1.05);
+    background: #feffd6;
+    text-decoration: underline;
+    font-weight: 750;
+}
+
+/* Responsive */
+/* Styles for larger screens (if needed) */
+@media (min-width: 769px) { /* Example breakpoint */
+    .navbar {
+        flex-direction: row; /* Switch back to horizontal layout */
+        align-items: center;
+        padding: 15px 40px;
+    }
+
+    .menu-toggle {
+        display: none; /* Hide menu toggle on larger screens */
+    }
+
+    .nav-links {
+        flex-direction: row;
+        transform: translateY(0); /* Show links by default */
+        position: static;
+        width: auto;
+        margin-top: 0;
+        background-color: transparent;
+        text-align: left;
+        padding: 0;
+    }
+
+    .nav-links li {
+        display: inline-block;
+        width: auto;
+        padding: 0;
+        border-bottom: none;
+    }
+
+    .nav-buttons {
+        flex-direction: row;
+        margin-top: 0;
+        width: auto;
+    }
+
+    .login-btn, .signup-btn {
+        width: auto;
+        margin: 0 5px; /* Add some spacing between buttons */
+        padding: 8px 15px;
+        text-align: center;
+    }
+}
+
+
+/* Specific styles for 414x896 (and similar) - optional */
+@media (width: 414px) and (height: 896px), (width: 375px) and (height: 812px), (width: 390px) and (height: 844px){ /* Example: iPhone X, XR, 11, 12, 13, 14 */
+    .logo a {
+        font-size: 1.2rem; /* Adjust logo font size */
+    }
+
+    .nav-links li a {
+        font-size: 1rem; /* Adjust link font size */
+    }
+    /* ... any other specific tweaks */
+
+    .nav-links {
+        top: 70px; /* Adjust top positioning if needed */
+    }
+}
+
+@media (orientation: portrait) and (max-width: 768px){
+      .nav-links {
+        top: 60px; /* Adjust top positioning if needed */
+    }
+}
