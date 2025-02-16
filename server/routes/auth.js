@@ -37,16 +37,16 @@ passport.deserializeUser(function (id, cb) {
 });
 
 // Route 1: Registering A New User: POST: http://localhost:8181/api/auth/register. No Login Required
-router.post('/register',[
+router.post('/register', [
     body('email', "Please Enter a Vaild Email").isEmail(),
-    body('name', "Username should be at least 4 characters.").isLength({ min: 4 }),
+    body('name', "Name should be at least 4 characters.").isLength({ min: 4 }),
     body('password', "Password Should Be At Least 8 Characters.").isLength({ min: 8 }),
     body('phone', "Phone Number Should Be 10 Digits.").isLength({ min: 10 }),
 ], async (req, res) => {
 
     const error = validationResult(req);
     if(!error.isEmpty()){
-        return res.status(400).json({error: error.array()});
+        return res.status(400).json({error: error.array()});        
     }
 
     try {
@@ -63,6 +63,8 @@ router.post('/register',[
             name: req.body.name,
             password: hash,
             phone: req.body.phone,
+            role: req.body.role,
+            referred: req.body.referred,
             createdAt: Date(),
         });
 
@@ -83,6 +85,7 @@ router.post('/register',[
 
 router.post('/login', [
     body('email', "Please Enter a Vaild Email").isEmail(),
+    body('password', "Password should be at least 6 chars long").isLength({min:6}),
 ], async (req, res) => {
 
     const errors = validationResult(req);
@@ -96,9 +99,12 @@ router.post('/login', [
             // console.log('my',theUser.name);
         // req.session.name=theUser.name
         req.session.email = req.body.email; // <-- Change req.body.username to req.body.name
-        console.log(req.session.email);
+        //console.log(req.session.email);
         // console.log(req.session.name);
         if (theUser) {
+            console.log("login  " + theUser);
+            //console.log("Login Password: " + req.body.password + " vs" + theUser.password);
+
             let checkHash = await bcrypt.compare(req.body.password, theUser.password);
             if (checkHash) {
                 let payload = {
@@ -107,12 +113,13 @@ router.post('/login', [
                     }
                 }
                 const authtoken = jwt.sign(payload, JWT_SECRET);
-                return res.status(200).json({ authtoken });
+                console.log(theUser);
+                return res.status(200).json({ authtoken, name: theUser.name, email: theUser.email });
             } else {
-                return res.status(403).json({ error: "Invalid Credentials" });
+                return res.status(401).json({ errors: [{ msg: "Invalid Password", path: "password" }] }); 
             }
         } else {
-            return res.status(403).json({ error: "Invalid Credentials" });
+            return res.status(401).json({ errors: [{ msg: "User not found", path: "email" }] }); 
         }
 
     } catch (error) {
@@ -177,6 +184,7 @@ router.get('/user', async (req, res) => {
             email: user.email,
             phone: user.phone,
             role: user.role,
+            referred: user.referred,
             createdAt: user.createdAt,
             updatedAt: user.updatedAt,
         };

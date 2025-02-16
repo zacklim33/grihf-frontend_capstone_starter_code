@@ -1,0 +1,121 @@
+
+@media (max-width: 1350px) {
+
+    .signin-container { width: 48vw; }
+    .signin-header h1 { font-size:3.8rem;}
+
+    .container {
+        width:70%;
+        padding: 0rem 2.4rem ;
+    }
+
+}
+
+
+@media (max-width: 1180px) {
+    
+    .signin-header h1 {
+        font-size:3.5rem;
+    }
+
+    .signin-container {
+        width: 62w;
+    }
+
+    .container {
+        width:75%;
+        padding: 0rem 2.4rem ;
+    }
+
+}
+
+@media (max-width: 1050px) {
+    
+    .signin-header h1 {
+        font-size:3.3rem;
+    }
+
+    .signin-container {
+        width: 66vw;
+    }
+
+    
+    .container {
+        width:80%;
+        padding: 0rem 1.0rem ;
+    }
+}
+
+
+
+@media (max-width: 850px) {
+    
+    .signin-header h1 {
+        font-size:3.0rem;
+    }
+
+    .signin-container {
+        width: 80vw;
+        padding: 1.8rem 1.5rem;
+    }
+
+    .container {
+        width:85%;
+    }
+
+    .signup-header span,.signup-header a{ 
+        font-size: 0.95rem; 
+    }
+}
+
+
+@media (max-width: 600px) {
+    .form-group {  gap: 0.50rem; 
+    }
+    .signin-header h1 {
+        font-size:3.0rem;
+    }
+
+    .signup-header span,.signup-header a{ 
+        font-size: 0.8rem; 
+    }
+
+    .signin-container {
+        width: 85vw;
+        padding: 1.8rem 0.9rem;
+    }
+
+    .container {
+        width:85%;
+    }
+
+    .column {
+        padding: 1.6rem 2.2rem ;
+        width:70%;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .form-group {  gap: 1.50rem; 
+    }
+    
+    .signin-header h1 {
+        font-size:2.7rem;
+    }
+
+    .signin-container {
+        width: 88vw;
+        padding: 1.5rem 0.25rem ;
+    }
+
+    .signup-header span,.signup-header a{ 
+        font-size: 0.65rem; 
+    }
+
+    .column {
+        padding: 1.6rem 2.0rem ;
+        width:75%;
+    }
+}

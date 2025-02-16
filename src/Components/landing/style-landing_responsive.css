@@ -1,0 +1,70 @@
+@media (max-width: 850px) {
+
+    .hero-section h1 {
+        font-size: 5.2rem;  /* from 6.0rem */
+        line-height: 5.0rem;
+    }
+
+    .hero-section h2 {
+        font-size: 2.4rem; 
+    }
+
+    .highlight-box {
+        padding: 2rem 1.75rem;
+    }
+}
+
+@media (max-width: 640px) {
+
+    .hero-section h1 {
+        font-size: 4.6rem;  /* from 6.0rem */
+        line-height: 5.0rem;
+    }
+
+    .hero-section h2 {
+        font-size: 2.05rem; 
+    }
+
+    .message {
+        font-size: 1.15rem;
+    }
+
+    .highlight-box {
+        padding: 1.8rem 1.15rem;
+    }
+
+    .message {
+        font-size: 1.05rem;
+    }
+
+    .button {
+        font-size: 1.25rem;
+        padding: 1.2rem 2.0rem;
+    }
+}
+
+
+@media (max-width: 530px) {
+
+    .hero-section h1 {
+        font-size: 4.0rem;  /* from 6.0rem */
+        line-height: 4.2rem;
+    }
+
+    .hero-section h2 {
+        font-size: 1.65rem; 
+    }
+
+    .highlight-box {
+        padding: 1.6rem 0.85rem;
+    }
+
+    .message {
+        font-size: 0.95rem;
+    }
+
+    .button {
+        font-size: 0.95rem;
+        padding: 1.2rem 2.0rem;
+    }
+}

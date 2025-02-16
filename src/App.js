@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from 'react';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import Navbar from './Components/navbar/navbar';
+import LandingPage from './Components/landing/landing'
+import LoginPage from './Components/login/login'
+import SignupPage from './Components/signup/signup'
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+
+        {/* display the navbar component*/}
+        <Navbar/>
+
+        {/*setup individual route components for different pages */ }
+        <Routes>
+          <Route path="/" element={<LandingPage/>}/>
+          <Route path="/login" element={<LoginPage/>}/>
+          <Route path="/signup" element={<SignupPage/>}/>
+        </Routes>
+            
+      </BrowserRouter>
+       
     </div>
   );
 }
-
 export default App;

@@ -1,0 +1,134 @@
+/* styles-signup_responsive.css */
+
+@media (max-width: 1450px) {
+    .signup-container {
+        width: 60vw; /* Occupy most of the screen width */
+        padding: 1.5rem; /* Reduce padding */
+    }
+
+    .column {
+        padding: 1.25rem;
+        box-sizing: border-box; /* Include padding in width calculation */
+        border-radius: 5px; /* Optional: Rounded corners for columns */
+        align-items: center;
+        width: 23vw;
+    }
+
+}
+
+
+
+@media (max-width: 1200px) {
+    .signup-container {
+        width: 65vw; /* Occupy most of the screen width */
+    }
+
+    .column {
+        padding: 1.25rem;
+        width: 25vw;
+    }
+
+}
+
+
+@media (max-width: 1010px) {
+    .signup-container {
+        width: 72vw; /* Occupy most of the screen width */
+    }
+
+    .column {
+        padding: 1.25rem;
+        width: 25vw;
+    }
+
+    .signup-header h1 {
+        font-size: 3.65rem; /* Smaller heading */
+    }
+
+    .signup-header span {
+        margin-top: 0.35rem;
+        font-size: 1.0rem; /* Smaller span text */
+    }
+    .signup-header a {
+        font-size: 1.0rem; /* Smaller span text */
+    }
+}
+
+@media (max-width: 880px) {
+    .signup-container {
+        width: 79vw; /* Occupy most of the screen width */
+    }
+
+    .column {
+        padding: 1.05rem;
+        width: 28vw;
+    }
+
+    .signup-header h1 {
+        font-size: 3.25rem; /* Smaller heading */
+    }
+
+    .signup-header span {
+        margin-top: 0.35rem;
+        font-size: 1.0rem; /* Smaller span text */
+    }
+    .signup-header a {
+        font-size: 1.0rem; 
+    }
+
+}
+
+@media (max-width: 769px) {
+    .signup-header {
+        flex-direction: column;        
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .signup-container {
+        margin-top: 18rem;
+        width: 90vw; /* Occupy most of the screen width */
+        padding: 1.5rem; /* Reduce padding */
+    }
+
+    .signup-header h1 {
+        font-size: 2.95rem; /* Smaller heading */
+    }
+
+    .signup-header span {
+        margin-top: 0.35rem;
+        font-size: 0.9rem; /* Smaller span text */
+    }
+    .signup-header a {
+        font-size: 0.9rem; /* Smaller span text */
+    }
+
+    .form-group {
+        flex-direction: column; /* Stack columns vertically */
+        gap: 1rem; /* Adjust spacing between elements */
+        align-items: center; /* Stretch items to full width */
+    }
+
+    .column {
+        width: 80%; /* Full width for each column */
+        border: none; /* remove border*/
+        margin-bottom: 0.5rem;
+    }
+
+    label {
+        font-size: 1rem; /* Smaller label font */
+    }
+
+    input[type="password"],
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    select {
+        width: 80%; /* Ensure inputs are full width */
+        padding: 8px; /* adjust padding*/
+        margin-bottom: 0.8rem; /* reduced margin*/
+        font-size: 0.95rem; /* reduced font size*/
+    }
+
+   
+}
