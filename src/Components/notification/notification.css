@@ -1,0 +1,44 @@
+/* Position the appointment container */
+.notification-container {
+    position: fixed; /* Stay in place during scroll */
+    bottom: 20px; /* Distance from the bottom */
+    right: 20px; /* Distance from the right */
+    background-color: #0057B8;
+    color:#f8f9fa; /* Light gray background (adjust as needed) */
+    border: 1px solid #ced4da; /* Subtle border */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    z-index: 1000; /* Ensure it's above other elements */
+  }
+  
+  h1 {
+    font-size:1.5rem;
+    padding: 0.2rem;
+  }
+
+  h4 {
+    font-size: 1.05rem;
+    font-weight:700;
+    margin-bottom:0.5rem;
+  }
+
+  .spanTxt {
+    justify-content: center;
+    align-items:center;
+    font-size:0.85rem;
+    padding: 0.15rem 0.15rem;
+    color:#FFD700;
+  }
+
+.close-btn {
+  display: 'inline-flex';
+  font-size:0.76rem;
+  background-color: #1772db; 
+}
+
+.close-btn:hover {
+    background-color: white;
+    color:black;
+    transition: all 0.3s ease;
+}

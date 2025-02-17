@@ -76,7 +76,7 @@ return (
 
         {/* Navigation Links */}
         <ul className="nav-links">
-          <li><Link to="/services" >Services</Link></li>
+          <li><Link to="/instant-consultation" >Services</Link></li>
           <li><Link to="/appointments" >Appointments</Link></li>
           <li><Link to="/blog" >Blog</Link></li>
           <li><Link to="/review" >Review</Link></li>

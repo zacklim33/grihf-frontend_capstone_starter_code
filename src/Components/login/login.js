@@ -43,11 +43,13 @@ const Login = () => {
 
     if (json.authtoken) {
       // If authentication token is received, store it in session storage
+      alert(JSON.stringify(json));
       sessionStorage.setItem('auth-token', json.authtoken);
       sessionStorage.setItem('email', json.email);
       sessionStorage.setItem('name', json.name);
+      sessionStorage.setItem('phoneNum', json.phoneNum);
 
-      alert("Successful login:" + json.name + " " + json.email);
+      alert("Successful login:" + json.name + " " + json.email + " " + json.phoneNum);
 
       // Redirect to home page and reload the window
       navigate('/');

@@ -17,6 +17,8 @@ body {
     background: #0057B8;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: visible /* due to jsx implementation */ !important;
+    position:relative;
+    z-index:40;
 }
 
 .nav-container {

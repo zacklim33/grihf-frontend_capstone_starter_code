@@ -114,7 +114,8 @@ router.post('/login', [
                 }
                 const authtoken = jwt.sign(payload, JWT_SECRET);
                 console.log(theUser);
-                return res.status(200).json({ authtoken, name: theUser.name, email: theUser.email });
+                return res.status(200).json({ authtoken, name: theUser.name, email: theUser.email, 
+                                              phoneNum: theUser.phone, role:theUser.role });
             } else {
                 return res.status(401).json({ errors: [{ msg: "Invalid Password", path: "password" }] }); 
             }

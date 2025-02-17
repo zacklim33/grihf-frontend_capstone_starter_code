@@ -5,12 +5,16 @@ import Navbar from './Components/navbar/navbar';
 import LandingPage from './Components/landing/landing'
 import LoginPage from './Components/login/login'
 import SignupPage from './Components/signup/signup'
-
+import InstantConsultation from './Components/InstantConsultation/InstantConsultation';
+import Notification from './Components/notification/notification';
 
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
+     <BrowserRouter>
+
+     {/* to display the notification component from Module 4*/}
+      <Notification>
 
         {/* display the navbar component*/}
         <Navbar/>
@@ -20,8 +24,11 @@ function App() {
           <Route path="/" element={<LandingPage/>}/>
           <Route path="/login" element={<LoginPage/>}/>
           <Route path="/signup" element={<SignupPage/>}/>
+          <Route path="/instant-consultation" element={<InstantConsultation />} />
+          
         </Routes>
-            
+
+        </Notification>
       </BrowserRouter>
        
     </div>
