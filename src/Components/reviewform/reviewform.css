@@ -60,38 +60,25 @@
 }
 
 
-.feedback-overlay {
-  position: fixed;
-  top: 00px;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(209, 245, 177, 0.5);
-  color:black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-}
-
 .feedback-modal {
   background-color: #f6f6f6;
   border-radius: 1rem;
   color:black;
-  padding: 2rem;
+  padding: 1.05rem;
   border-radius: 0.5rem;
-  max-width: 600px;
+  max-width: 550px;
   justify-content: center;
   align-items: center;
-  
+  margin-top: -0.25rem;  
 }
 
 .feedback-modal h1 {
   font-size: 1.75rem;
-  margin-top: 0.25rem;
   padding: 0.25rem;
   text-decoration: underline;
 }
+
+
 .stars {
   display: inline-flex;
   gap: 0.5rem;
@@ -133,6 +120,11 @@
   color: white;
   transform: none;
   text-decoration: none;
+}
+
+.feedback-modal label {
+  margin-left: 0.5rem;
+  margin-top: -0.2rem;
 }
 
 .feedback-modal input[type='text'],

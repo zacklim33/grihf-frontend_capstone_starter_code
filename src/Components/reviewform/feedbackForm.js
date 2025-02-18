@@ -4,12 +4,17 @@ import React, { useState, useEffect } from 'react';
 // Function component for giving reviews
 function GiveReviews({serialNumber, onReviewSubmit, review}) {
 
-    // State variables using useState hook
+  //serialNumber = doctorID, from Review component
+  //onReviewSubmit = {handleReviewSubmit} function from Review component
+  //review prop =  an array of all individual doctor's review
+
+  // State variables using useState hook
   const [showForm, setShowForm] = useState(false);
   const [submittedMessage, setSubmittedMessage] = useState('');
   const [submitted, setSubmitted] = useState(false);
   const [showWarning, setShowWarning] = useState(false);
   const [formData, setFormData] = useState({ name: '', review: '', rating: 0 });
+
 
   useEffect(() => {
     const storedFormData = localStorage.getItem(`reviewFormData_${serialNumber}`);
@@ -31,9 +36,8 @@ function GiveReviews({serialNumber, onReviewSubmit, review}) {
   };
 
 
-  // Function to handle form input changes
+  // Update the form data based on user input
   const handleChange = (e) => {
-    // Update the form data based on user input
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
@@ -44,7 +48,7 @@ function GiveReviews({serialNumber, onReviewSubmit, review}) {
     // Check if all required fields are filled before submission
     if (formData.name && formData.review && formData.rating > 0) {
       setSubmittedMessage(formData);
-      localStorage.setItem(`reviewFormData_${serialNumber}`, JSON.stringify(formData));
+      localStorage.setItem(`reviewFormData`, JSON.stringify(formData));
       
       //pass review data to parent component
       onReviewSubmit(serialNumber, formData.review);
@@ -68,6 +72,7 @@ function GiveReviews({serialNumber, onReviewSubmit, review}) {
               </span>
       );
   };
+
   
   if (submitted) {
     return (
@@ -76,11 +81,12 @@ function GiveReviews({serialNumber, onReviewSubmit, review}) {
             <p> <strong>Name:</strong> {formData.name} </p>
             <p> <strong>Review:</strong> {formData.review} </p>
             <p> <strong>Rating:</strong> {Array(formData.rating).fill('⭐️').join('')} </p>
+            <br/>
         </div>
      );
   };
 
-
+//rendered as a modal window for user to enter their feedback
   return (
 
       <div className="feedback-modal">
@@ -97,16 +103,17 @@ function GiveReviews({serialNumber, onReviewSubmit, review}) {
             <textarea id="review" name="review" value={formData.review} onChange={handleChange}> </textarea>
           </div> <br/>
 
-          {/* rating */}
+          {/* rating & submit button to be aligned together */}
           <div>
-            <label htmlfor="rating">Rating:
-            <span> {[1,2,3,4,5].map((rating) => renderStar(rating))} &nbsp;</span>             
-            </label> 
-            <button style={{justifyContent:"flex-end"}}type="submit">Submit</button>
+            <table> <tr> 
+              <td> <label htmlfor="rating">Rating: 
+                 <span> {[1,2,3,4,5].map((rating) => renderStar(rating))} &nbsp;</span>             
+              </label> </td>
+              <td> 
+                <button style={{justifyContent:"flex-end"}}type="submit">Submit</button>
+              </td>
+            </tr> </table>
           </div> <br/>
-
-          {/* Submit button for form submission */}
-           
 
         </form>
       </div>
