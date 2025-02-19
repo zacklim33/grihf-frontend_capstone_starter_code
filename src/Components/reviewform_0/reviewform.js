@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Popup from 'reactjs-popup';
 import { useNavigate } from 'react-router-dom';
 import './reviewform.css';
-import GiveReviews from './feedbackForm';
+import GiveReviews from './GiveReviews';
 
 const Review = () => {
 
@@ -16,7 +16,9 @@ const Review = () => {
   const doctors = [
     { id: 1, name: 'Dr. Zela Lee', specialty: 'General Physician' },
     { id: 2, name: 'Dr. Williams Huang', specialty: 'Dentist' },
-    { id: 3, name: 'Dr. Smith Johnson', specialty: 'Cardiology' }
+    { id: 3, name: 'Dr. Smith Johnson', specialty: 'Cardiology' },
+    { id: 4, name: 'Dr. Lena Chow', specialty: 'Dermatology' },
+    { id: 5, name: 'Dr. Apu Ali', specialty: 'Homeopath' }
   ];
 
   //load review from localStorage
@@ -25,8 +27,11 @@ const Review = () => {
     const storedReviews = {} ; 
 
     doctors.forEach( doctor => {
-      const storedReview = localStorage.getItem(`reviewFormData`)
-      if(storedReview) storedReviews[doctor.id] = JSON.parse(storedReview);
+      const storedReview = localStorage.getItem(`reviewFormData`);
+      if(storedReview) {
+         alert("storedReviews:" + storedReview);
+         storedReviews[doctor.id] = JSON.parse(storedReview);
+       }
     });
 
     setCompletedReviews(storedReviews);

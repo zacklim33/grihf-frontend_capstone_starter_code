@@ -7,8 +7,8 @@ import LoginPage from './Components/login/login'
 import SignupPage from './Components/signup/signup'
 import InstantConsultation from './Components/InstantConsultation/InstantConsultation';
 import Notification from './Components/notification/notification';
-import Review from './Components/reviewform/reviewform';
-
+import Review from './Components/reviewform/ReviewTable';
+import DoctorTable from './Components/testReview/DoctorTable';
 
 function App() {
   return (
@@ -28,7 +28,7 @@ function App() {
           <Route path="/signup" element={<SignupPage/>}/>
           <Route path="/instant-consultation" element={<InstantConsultation />} />
           <Route path="/review" element={<Review/>} />
-
+          <Route path="/test-review" element={<DoctorTable/>} />
         </Routes>
 
         </Notification>

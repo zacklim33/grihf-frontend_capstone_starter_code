@@ -9,60 +9,80 @@ function GiveReviews({serialNumber, onReviewSubmit, review}) {
   //review prop =  an array of all individual doctor's review
 
   // State variables using useState hook
-  const [showForm, setShowForm] = useState(false);
-  const [submittedMessage, setSubmittedMessage] = useState('');
+  const [storedReviews, setStoredReviews] = useState([]);
   const [submitted, setSubmitted] = useState(false);
   const [showWarning, setShowWarning] = useState(false);
-  const [formData, setFormData] = useState({ name: '', review: '', rating: 0 });
+
+  //data object to store what user currently input in this form
+  const [formData, setFormData] = useState({ name: '', review: '', rating: 0, serial: serialNumber }); 
 
 
+  //to load previous review data from localStorage, and append the new review to the localStorage
   useEffect(() => {
-    const storedFormData = localStorage.getItem(`reviewFormData_${serialNumber}`);
-    if (storedFormData) {
-        setFormData(JSON.parse(storedFormData));
-        setSubmitted(true);
+
+    const storedUserReviews = localStorage.getItem(`reviewFormData`);
+    
+    if (storedUserReviews) {
+      try { 
+
+        let storedUserReviewsArray = JSON.parse(storedUserReviews);
+
+        //update formData (state variable) with review of doctors loaded from localStorage 
+        setStoredReviews(storedUserReviewsArray);  
+        
+        //output stored reviews 
+        storedUserReviewsArray.forEach(drReview => {  console.log(drReview); } );
+
+       } catch (error) {
+        console.error("Error parsing reviews for doctors from localStorage:", error);
+       }
+      } else {
+        console.log("No doctors' review for localStorage found")
       }
     }, [serialNumber]);
 
+/*
   useEffect(() => {
-      setFormData((prevFormData) => ({
-          ...prevFormData, review: review || prevFormData.review
+      setFormData((prevFormData) => ({ ...prevFormData, review: review || prevFormData.review
       }));
     }, [review]);
+*/
 
-
+// Update the form data based on user input
   const handleRatingChange = (rating) => {
     setFormData(prev => ({ ...prev, rating }));
   };
 
-
-  // Update the form data based on user input
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  // Function to handle form submission
+
+// Function to handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
     
-    // Check if all required fields are filled before submission
+    // Check if all required fields are filled 
     if (formData.name && formData.review && formData.rating > 0) {
-      setSubmittedMessage(formData);
+
+      setStoredReviews({storedReviews,formData});
       localStorage.setItem(`reviewFormData`, JSON.stringify(formData));
       
       //pass review data to parent component
       onReviewSubmit(serialNumber, formData.review);
-
       setShowWarning(false);
 
     } else {      
+      //not all input fields are filled up
       setShowWarning(true);
+
     }
 
     //reset form data
-    setFormData({ name: '',review: '', rating: 0 });
+    setFormData({ name: '',review: '', rating: 0, serial: 0 });
 
   };
+
 
   const renderStar = (rating) => {
     const starClasses = `star ${formData.rating >= rating ? 'filled' : ''} ${formData.rating === rating ? 'clicked' : ''}`;  
@@ -73,7 +93,7 @@ function GiveReviews({serialNumber, onReviewSubmit, review}) {
       );
   };
 
-  
+//modal popup to notify user of his input
   if (submitted) {
     return (
         <div className="review-box">
