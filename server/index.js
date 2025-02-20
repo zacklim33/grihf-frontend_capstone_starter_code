@@ -24,7 +24,28 @@ app.get('/', (req, res) => {
     res.send('Hello World!');
 });
 
+// Dynamic route to handle all PDFs under /reports/
+app.get('/reports/:fileName', (req, res) => {
+  const fileName = req.params.fileName; // Extract the filename from the URL
+  const filePath = path.join(__dirname, 'reports', fileName);
 
+  // Ensure the file has a .pdf extension (optional security check)
+  if (!fileName.endsWith('.pdf')) {
+      return res.status(400).send('Only PDF files are supported');
+  }
+
+  // Set the headers for PDF download
+  res.setHeader('Content-Type', 'application/pdf');
+  res.setHeader('Content-Disposition', `attachment; filename="${fileName}"`);
+
+  // Send the file
+  res.sendFile(filePath, (err) => {
+      if (err) {
+          console.error('Error sending file:', err);
+          res.status(404).send('File not found');
+      }
+  });
+});
 
   // Start the server
 app.listen(PORT, () => {

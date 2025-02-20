@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Link } from "react-router-dom"; // import Link component for navigation using react-router-dom
+import { Link, useLocation } from "react-router-dom"; // import Link component for navigation using react-router-dom
+
 import "./navbar.css"; //import css styles
 import "./navbar_responsive.css"; //import responsive css styles
 
@@ -10,7 +11,9 @@ const Navbar = () => {
   const [name, setName] = useState("");
   const [email,setEmail] = useState("");
   const [showDropdown, setShowDropdown] = useState(false);
-  const handleClick = () => setClick(!click);
+  const [dropdownVisible, setDropdownVisible] = useState(false); //toggle for profile card
+
+  const location = useLocation();
 
   const handleLogout = () => {
       sessionStorage.removeItem("auth-token");
@@ -38,6 +41,7 @@ const Navbar = () => {
     setShowDropdown(!showDropdown);
   }
 
+  //for initial login
   useEffect(() => { 
     const storedemail = sessionStorage.getItem("email");
     const storedname = sessionStorage.getItem("name");
@@ -47,7 +51,16 @@ const Navbar = () => {
           setEmail(storedemail);
           setName(storedname);
         }
-      }, []);
+      }, [location]);
+
+
+  /* Toggle dropdown visibility for profile card 
+    when user login and click on "WelcomeTxt"
+  */
+  const toggleDropdown = (event) => {
+    /*event.preventDefault();*/
+    setDropdownVisible(!dropdownVisible);
+  };
 
 return (
 <nav className="navbar">
@@ -87,9 +100,14 @@ return (
         <div className="nav-buttons">
         { isLoggedIn? (  <> 
         
-          <p class="welcomeTxt"> Hi, {name}. &nbsp; </p>
+          <p class="welcomeTxt" onClick={toggleDropdown}> Hi, {name}.  &#9660; &nbsp; </p>
           <span> <button className="login-btn" onClick={handleLogout}> Logout </button> </span>
-        
+          
+          <ul class={`dropdown-menu ${dropdownVisible ? 'visible' : ''}` }>
+            <li> <Link to="/profile"  onClick={toggleDropdown}> Your Profile</Link> </li>
+            <li> <Link to="/reports"onClick={toggleDropdown}>Your Reports </Link></li>
+          </ul>
+
         </> ) : (
           <>
           <Link to="/login" className="login-btn">Login</Link>

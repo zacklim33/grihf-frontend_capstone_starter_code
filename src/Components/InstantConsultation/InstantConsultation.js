@@ -30,6 +30,7 @@ const InstantConsultation = () => {
         })
         .catch(err => console.log(err));
     }
+
     const handleSearch = (searchText) => {
 
         if (searchText === '') {
@@ -49,7 +50,9 @@ const InstantConsultation = () => {
             window.location.reload()
         }
     };
+
     const navigate = useNavigate();
+    
     useEffect(() => {
         getDoctorsDetails();
         // const authtoken = sessionStorage.getItem("auth-token");
