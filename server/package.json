@@ -1,12 +1,15 @@
 {
-  "name": "server",
+  "name": "medical-app",
   "version": "1.0.0",
+  "private": true,
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
-  },
+    "start": "react-scripts start",
+    "build": "react-scripts build && rm -rdf server/build && mv build server/",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+    },
   "keywords": [],
   "author": "",
   "license": "ISC",
