@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/med-app/static/css/main.68ec584b.css",
+    "main.js": "/med-app/static/js/main.72a2d62d.js",
+    "static/js/488.15c64cee.chunk.js": "/med-app/static/js/488.15c64cee.chunk.js",
+    "static/media/background.jpg": "/med-app/static/media/background.173c1ad04310cffc8173.jpg",
+    "index.html": "/med-app/index.html",
+    "main.68ec584b.css.map": "/med-app/static/css/main.68ec584b.css.map",
+    "main.72a2d62d.js.map": "/med-app/static/js/main.72a2d62d.js.map",
+    "488.15c64cee.chunk.js.map": "/med-app/static/js/488.15c64cee.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.68ec584b.css",
+    "static/js/main.72a2d62d.js"
+  ]
+}
