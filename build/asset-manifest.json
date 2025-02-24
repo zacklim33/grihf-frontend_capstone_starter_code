@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/med-app/static/css/main.68ec584b.css",
-    "main.js": "/med-app/static/js/main.72a2d62d.js",
-    "static/js/488.15c64cee.chunk.js": "/med-app/static/js/488.15c64cee.chunk.js",
-    "static/media/background.jpg": "/med-app/static/media/background.173c1ad04310cffc8173.jpg",
-    "index.html": "/med-app/index.html",
-    "main.68ec584b.css.map": "/med-app/static/css/main.68ec584b.css.map",
-    "main.72a2d62d.js.map": "/med-app/static/js/main.72a2d62d.js.map",
-    "488.15c64cee.chunk.js.map": "/med-app/static/js/488.15c64cee.chunk.js.map"
+    "main.css": "/grihf-frontend_capstone_starter_code/static/css/main.00259ad9.css",
+    "main.js": "/grihf-frontend_capstone_starter_code/static/js/main.6012de0a.js",
+    "static/js/488.15c64cee.chunk.js": "/grihf-frontend_capstone_starter_code/static/js/488.15c64cee.chunk.js",
+    "static/media/background.jpg": "/grihf-frontend_capstone_starter_code/static/media/background.173c1ad04310cffc8173.jpg",
+    "index.html": "/grihf-frontend_capstone_starter_code/index.html",
+    "main.00259ad9.css.map": "/grihf-frontend_capstone_starter_code/static/css/main.00259ad9.css.map",
+    "main.6012de0a.js.map": "/grihf-frontend_capstone_starter_code/static/js/main.6012de0a.js.map",
+    "488.15c64cee.chunk.js.map": "/grihf-frontend_capstone_starter_code/static/js/488.15c64cee.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.68ec584b.css",
-    "static/js/main.72a2d62d.js"
+    "static/css/main.00259ad9.css",
+    "static/js/main.6012de0a.js"
   ]
 }
