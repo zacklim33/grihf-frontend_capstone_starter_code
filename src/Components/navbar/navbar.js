@@ -62,6 +62,8 @@ const Navbar = () => {
     setDropdownVisible(!dropdownVisible);
   };
 
+console.log("Rendering Navigation Bar");
+
 return (
 <nav className="navbar">
   <div className="nav-container">   

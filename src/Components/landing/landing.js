@@ -5,6 +5,8 @@ import "./style-landing_responsive.css"; //import responsive css styles
 
 const landing = () => {
 
+console.log("Rendering Landing page");
+
 return (
 
     <section class="hero-section">  

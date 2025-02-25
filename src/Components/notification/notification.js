@@ -69,6 +69,8 @@ useEffect( ()=> {
 }, []); //empty dependency array to allow for 1 run in initial render
 
 
+console.log("Rendering Notification.js")
+
 return (
 <div>
   {/* Render Child component */}

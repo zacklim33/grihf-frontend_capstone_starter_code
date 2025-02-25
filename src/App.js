@@ -12,6 +12,9 @@ import ProfileForm from './Components/ProfileCard/ProfileCard';
 import ReportsLayout from './Components/ReportsLayout/ReportsLayout';
 
 function App() {
+
+  console.log("Rendering App");
+  
   return (
     <div className="App">
      <BrowserRouter>
