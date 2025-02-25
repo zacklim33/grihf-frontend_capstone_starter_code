@@ -28,7 +28,6 @@ const handleApptWindow = (e) => {
 }
 
 
-
 // Do side-effects 
 useEffect( ()=> {
 
@@ -37,11 +36,11 @@ useEffect( ()=> {
   const storedName = sessionStorage.getItem("name");
   const storedPhoneNum= sessionStorage.getItem("phoneNum");
 
-  const storedAppData = JSON.parse(localStorage.getItem("appointments"))[0];
-  const storedDoctorName = storedAppData.doctorName;
-  const storedDoctorSpeciality = storedAppData.doctorSpeciality;
-  const storedTimeSlot = storedAppData.timeSlot;
-  const storedApptDate = storedAppData.apptDate; 
+  const appointmentsData = localStorage.getItem("appointments");
+  const storedDoctorName = appointmentsData.doctorName;
+  const storedDoctorSpeciality = appointmentsData.doctorSpeciality;
+  const storedTimeSlot = appointmentsData.timeSlot;
+  const storedApptDate = appointmentsData.apptDate; 
   
    //set the relevant state variables
   if( storedEmail) {
@@ -51,17 +50,23 @@ useEffect( ()=> {
     setPhoneNum(storedPhoneNum);
   }
 
-  setApptData(storedAppData);
-  alert("isLoggedIn " + isLoggedIn);
 
-  if(storedAppData) {
-    setDoctorName(storedDoctorName);
-    setDoctorSpeciality(storedDoctorSpeciality);
-    setTimeSlot(storedTimeSlot);
-    setApptDate(storedApptDate);
+  // to ensure that there is appointmentData before applying JSON.parse()
+  if(appointmentsData) {
+    
+    const parsedData = JSON.parse(appointmentsData);
+    const storedAppData = parsedData && parsedData[0]; // Safe access
+
+    if (storedAppData) {
+      setApptData(storedAppData);
+      setDoctorName(storedDoctorName);
+      setDoctorSpeciality(storedDoctorSpeciality);
+      setTimeSlot(storedTimeSlot);
+      setApptDate(storedApptDate);
+    }
   }
 
-}, []); //empty dependency array for 1 run after initial render
+}, []); //empty dependency array to allow for 1 run in initial render
 
 
 return (

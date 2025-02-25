@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/grihf-frontend_capstone_starter_code/static/css/main.00259ad9.css",
-    "main.js": "/grihf-frontend_capstone_starter_code/static/js/main.6012de0a.js",
+    "main.js": "/grihf-frontend_capstone_starter_code/static/js/main.af16a991.js",
     "static/js/488.15c64cee.chunk.js": "/grihf-frontend_capstone_starter_code/static/js/488.15c64cee.chunk.js",
     "static/media/background.jpg": "/grihf-frontend_capstone_starter_code/static/media/background.173c1ad04310cffc8173.jpg",
     "index.html": "/grihf-frontend_capstone_starter_code/index.html",
     "main.00259ad9.css.map": "/grihf-frontend_capstone_starter_code/static/css/main.00259ad9.css.map",
-    "main.6012de0a.js.map": "/grihf-frontend_capstone_starter_code/static/js/main.6012de0a.js.map",
+    "main.af16a991.js.map": "/grihf-frontend_capstone_starter_code/static/js/main.af16a991.js.map",
     "488.15c64cee.chunk.js.map": "/grihf-frontend_capstone_starter_code/static/js/488.15c64cee.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.00259ad9.css",
-    "static/js/main.6012de0a.js"
+    "static/js/main.af16a991.js"
   ]
 }
