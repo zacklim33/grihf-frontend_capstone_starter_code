@@ -37,7 +37,7 @@ const DoctorCardIC = ({ name, speciality, experience, ratings, profilePic }) => 
     //so that notification component can pick up appointment changes immediately
     window.dispatchEvent(new Event('storage'));
 
-    alert("Appointment booked successfully " + JSON.stringify(updatedAppointments));
+    alert("Appointment booked successfully ");
     
 
     
