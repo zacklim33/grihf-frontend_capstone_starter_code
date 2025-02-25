@@ -37,11 +37,8 @@ useEffect( ()=> {
   const storedPhoneNum= sessionStorage.getItem("phoneNum");
 
   const appointmentsData = localStorage.getItem("appointments");
-  const storedDoctorName = appointmentsData.doctorName;
-  const storedDoctorSpeciality = appointmentsData.doctorSpeciality;
-  const storedTimeSlot = appointmentsData.timeSlot;
-  const storedApptDate = appointmentsData.apptDate; 
-  
+
+
    //set the relevant state variables
   if( storedEmail) {
     setLogin(true);
@@ -53,16 +50,15 @@ useEffect( ()=> {
 
   // to ensure that there is appointmentData before applying JSON.parse()
   if(appointmentsData) {
-    
     const parsedData = JSON.parse(appointmentsData);
     const storedAppData = parsedData && parsedData[0]; // Safe access
-
+    
     if (storedAppData) {
       setApptData(storedAppData);
-      setDoctorName(storedDoctorName);
-      setDoctorSpeciality(storedDoctorSpeciality);
-      setTimeSlot(storedTimeSlot);
-      setApptDate(storedApptDate);
+      setDoctorName(storedAppData.doctorName);
+      setDoctorSpeciality(storedAppData.doctorSpeciality);
+      setTimeSlot(storedAppData.timeSlot);
+      setApptDate(storedAppData.apptDate);
     }
   }
 
