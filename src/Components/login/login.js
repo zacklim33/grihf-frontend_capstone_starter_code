@@ -43,13 +43,13 @@ const Login = () => {
 
     if (json.authtoken) {
       // If authentication token is received, store it in session storage
-      alert(JSON.stringify(json));
+      
       sessionStorage.setItem('auth-token', json.authtoken);
       sessionStorage.setItem('email', json.email);
       sessionStorage.setItem('name', json.name);
       sessionStorage.setItem('phoneNum', json.phoneNum);
 
-      alert("Successful login:" + json.name + " " + json.email + " " + json.phoneNum);
+      console.log("Successful login:" + json.name + " " + json.email);
 
       // Redirect to home page and reload the window
       navigate('/');
@@ -62,9 +62,6 @@ const Login = () => {
 
       if (json.errors) {
         
-        /* const jsonString = JSON.stringify(json.errors);
-        alert("some errors:" + jsonString); */
-
         const newErrors = {};
         json.errors.forEach(error => {
           // Assuming your API returns errors with a 'path' property
@@ -81,12 +78,6 @@ const Login = () => {
         setShowerr(newErrors);
 
       } else if (json.error) {
-
-        /*
-        const jsonString = JSON.stringify(json.errors);
-        alert("1x errors:" + jsonString); 
-        alert("single error");
-        alert(toString(json.error)); */
 
           setShowerr({ general: json.error }); // General error
       }

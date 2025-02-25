@@ -13,9 +13,7 @@ const DoctorCardIC = ({ name, speciality, experience, ratings, profilePic }) => 
   // Load appointments from localStorage on component mount
 
 
-  const handleBooking = () => {
-    setShowModal(true);
-  };
+  const handleBooking = () => setShowModal(true);
 
   const handleCancel = (appointmentId) => {
     const updatedAppointments = appointments.filter((appointment) => appointment.id !== appointmentId);
@@ -34,7 +32,12 @@ const DoctorCardIC = ({ name, speciality, experience, ratings, profilePic }) => 
     setShowModal(false);
 
     localStorage.setItem('appointments',JSON.stringify(updatedAppointments));
-    alert("TO test appt submit:  "+ JSON.stringify(updatedAppointments));
+
+    //to manually trigger storage event after updating localStorage, 
+    //so that notification component can pick up appointment changes immediately
+    window.dispatchEvent(new Event('storage'));
+
+    alert("Appointment booked successfully " + JSON.stringify(updatedAppointments));
     
 
     

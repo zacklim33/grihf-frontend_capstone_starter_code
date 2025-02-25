@@ -1,8 +1,7 @@
 {
   "name": "test_med",
   "version": "0.1.0",
-  "private": false,
-  "homepage": "https://zacklim33.github.io/grihf-frontend_capstone_starter_code",
+  "private": false,  
   "dependencies": {
     "cra-template": "1.2.0",
     "react": "^18.0.0",
@@ -17,7 +16,7 @@
   },
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "./node_modules/gh-pages/bin/gh-pages-clean.js && gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build && rm -rdf server/build && mv build server/",
     "test": "react-scripts test",

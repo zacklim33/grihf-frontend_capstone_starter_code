@@ -9,23 +9,23 @@ console.log("Rendering Landing page");
 
 return (
 
-    <section class="hero-section">  
-    <div class="background-layer"> </div>
+    <section className="hero-section">  
+    <div className="background-layer"> </div>
   
-    <div class="flex-hero"> 
+    <div className="flex-hero"> 
         <h1>Your Health</h1>
         <h2>Our Responsibility</h2>
           
-      <div class="highlight-box">
-        <p class="message">  Your <strong>reliable medical</strong> health services at the remote areas<br/>
+      <div className="highlight-box">
+        <p className="message">  Your <strong>reliable medical</strong> health services at the remote areas<br/>
           New life-saving initiative from StayHealthy Inc!
         </p>
       </div>
       <br/>
-        <a href="#" class="button">Get Started</a>
+        <a href="#" className="button">Get Started</a>
     </div>
   
-   <div class="overlay-gradient"></div>
+   <div className="overlay-gradient"></div>
   </section>  
   
 

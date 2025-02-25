@@ -34,6 +34,7 @@ function App() {
           <Route path="/review" element={<Review/>} />
           <Route path='/profile' element={<ProfileForm />} />
           <Route path='/reports' element={<ReportsLayout />} />
+          <Route path='/appointments' element={null} /> {/* using notification.js to handle */}
         </Routes>
 
         </Notification>

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Popup from 'reactjs-popup';
 import './ReviewTable.css';
 import GiveReviews from './GiveReviews';
-
+import { useLocation, useNavigate } from "react-router-dom";
 
 //decoy doctor data - to be replaced with an approriate API endpoint
 const doctors = [
@@ -20,6 +20,29 @@ const ReviewTable = () => {
   const [completedReview, setCompletedReview] = useState({}); // Track completed reviews
   const [chosenDoctor, setChosenDoctor] = useState(null); // Track which doctor is selected; doctor's ID
   const [showForm, setShowForm] = useState(false); // Add state to control form visibility
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+
+  // Check if we're on the /review route
+  const location = useLocation(); // Get current route
+  const navigate = useNavigate();
+  const isReviewPage = location.pathname === "/review";
+
+  // to handle if user has login successfully, else reroute to login
+useEffect ( () => {
+   
+  const storedName = sessionStorage.getItem("name");
+  const storedEmail = sessionStorage.getItem("email");
+
+  //if not successfully login, navigate to /login endpoint
+  if (storedName) {
+       setName(storedName) ;
+       setEmail(storedEmail);
+  } else {
+       navigate("/login");
+  }
+
+},  []);
 
   //prop to be passed onto GiveReviews component
   const handleGiveReview = (serialNumber) => {
